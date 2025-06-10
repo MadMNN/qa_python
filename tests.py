@@ -63,3 +63,9 @@ class TestBooksCollector:
         collector = BooksCollector()
         collector.add_new_book('451 градус по Фаренгейту')
         assert collector.get_books_genre() == {'451 градус по Фаренгейту': ''}
+        
+    def test_get_book_genre_returns_correct_genre():
+        collector = BooksCollector()
+        collector.add_new_book('1984')
+        collector.set_book_genre('1984', 'Фантастика')
+        assert collector.get_book_genre('1984') == 'Фантастика'
